@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Login page";
+}
+<div class="container text-center">
+	<div class="card col-lg-6 col-md-12 mx-auto">
+		<div class="card-header">
+			Type your login credentials
+		</div>
+		<div class="card-body">
+			<form method="post" class=" m-5">
+				@if (TempData["error"] != null)
+				{
+					<div class="alert alert-danger">@TempData["error"]</div>
+				}
+				@if (TempData["success"] != null)
+				{
+					<div class="alert alert-success">@TempData["success"]</div>
+				}
+				<ul class="list-unstyled">
+					<li class="mb-3">
+						<label asp-for="UserName"></label>
+						<input type="text" class="form-control my-2" asp-for="UserName" placeholder="UserName" />
+						<span class="text-danger" asp-validation-for="UserName"></span>
+					</li>
+					<li class="mb-3">
+						<label asp-for="Password"></label>
+						<input type="password" class="form-control  my-2" asp-for="Password" placeholder="Password" />
+						<span class="text-danger" asp-validation-for="Password"></span>
+					</li>
+					<li class="mb-3">
+						<input type="hidden" asp-for="IPs" placeholder="UserName" />
+						<span  asp-validation-for="IPs"></span>
+					</li>
+					<button class="btn btn-outline-primary" type="submit">Login</button>
+				</ul>
+			</form>
+		</div>
+	</div>
+</div>
+
+@*Bringing client side validation*@
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
