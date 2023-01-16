@@ -1,4 +1,5 @@
 using IcuService;
+using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +10,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddResponseCompression(options =>
 {
-	options.EnableForHttps = true;
-	options.MimeTypes = new[] { "text/plain" };
+	options.Providers.Add<GzipCompressionProvider>();
 });
 
 var app = builder.Build();
