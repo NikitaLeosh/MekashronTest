@@ -4,9 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MekashronTest.Client</title>
+    <noscript class="loadLater">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MekashronTest.Client.styles.css" asp-append-version="true" />
+    </noscript>
+    <script type="application/javascript">
+        // Load the contents of <noscript class="loadLater"></noscript> after the page has loaded
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var loadLater = document.querySelector('.loadLater');
+            var head = document.querySelector('head');
+            if(loadLater && head){
+                head.insertAdjacentHTML('beforeend', loadLater.innerHTML);
+            }
+        });
+    </script>
 </head>
 <body>
     <header>

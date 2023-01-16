@@ -11,6 +11,7 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddResponseCompression(options =>
 {
 	options.Providers.Add<GzipCompressionProvider>();
+	options.EnableForHttps = true;
 });
 
 var app = builder.Build();
