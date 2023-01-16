@@ -77,9 +77,8 @@
 			background-color: #fff;
 			background-clip: border-box;
 			border: 1px solid rgba(0,0,0,.125);
-			border-radius: .25rem
-			margin-left:auto !important;
-			margin-right:auto !important;
+			border-radius: .25rem margin-left:auto !important;
+			margin-right: auto !important;
 		}
 
 		.card-header {
@@ -92,6 +91,7 @@
 		.text-center {
 			text-align: center !important
 		}
+
 		:
 		.my-2 {
 			margin-top: .5rem !important;
@@ -123,11 +123,14 @@
 			padding-left: 0;
 			list-style: none
 		}
+		.mx-auto{
+			margin-left:auto;
+			margin-right:auto
+		}
 
 	</style>
 	<noscript class="loadLater">
-		@*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
-		<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+		<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="~/MekashronTest.Client.styles.css" asp-append-version="true" />
 	</noscript>
 
@@ -141,6 +144,8 @@
 			}
 		});
 	</script>
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
 </head>
 <body>
 	<header>
