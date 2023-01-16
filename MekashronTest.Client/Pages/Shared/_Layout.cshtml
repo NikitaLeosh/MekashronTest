@@ -123,15 +123,32 @@
 			padding-left: 0;
 			list-style: none
 		}
-		.mx-auto{
-			margin-left:auto;
-			margin-right:auto
+
+		.mx-auto {
+			margin-left: auto;
+			margin-right: auto
 		}
 
+		@@media (min-width:768px) {
+			.col-md-12 {
+				flex: 0 0 auto;
+				width: 100%
+			}
+		}
+
+		@@media (min-width:992px) {
+			.col-lg-6 {
+				flex: 0 0 auto;
+				width: 50%
+			}
+		}
+
+		}
 	</style>
 	<noscript class="loadLater">
 		<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="~/MekashronTest.Client.styles.css" asp-append-version="true" />
+		<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	</noscript>
 
 	<script type="application/javascript">
@@ -144,7 +161,7 @@
 			}
 		});
 	</script>
-	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
 
 </head>
 <body>
