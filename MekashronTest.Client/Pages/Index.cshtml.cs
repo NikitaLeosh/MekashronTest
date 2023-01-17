@@ -43,6 +43,7 @@ namespace MekashronTest.Client.Pages
 			catch (Exception ex)
 			{
 				TempData["error"] = $"Error: {ex.Message}";
+				return Page();
 			}
 			jResponse = JObject.Parse(response.@return);
 			if (response.@return.Contains("ResultCode", StringComparison.InvariantCultureIgnoreCase))
