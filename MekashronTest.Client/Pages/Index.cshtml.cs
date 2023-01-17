@@ -36,7 +36,14 @@ namespace MekashronTest.Client.Pages
 			IPs = _accessor.HttpContext.Connection.RemoteIpAddress.ToString();
 			Console.WriteLine(IPs);
 			request = new(UserName, Password, IPs);
-			response = await _icuTech.LoginAsync(request);
+			try
+			{
+				response = await _icuTech.LoginAsync(request);
+			}
+			catch (Exception ex)
+			{
+				TempData["error"] = $"Error: {ex.Message}";
+			}
 			jResponse = JObject.Parse(response.@return);
 			if (response.@return.Contains("ResultCode", StringComparison.InvariantCultureIgnoreCase))
 			{
